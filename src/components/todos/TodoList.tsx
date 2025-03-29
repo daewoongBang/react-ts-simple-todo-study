@@ -1,5 +1,7 @@
 import { useState } from 'react';
+
 import TodoItem from './TodoItem';
+import AddTodo from './AddTodo';
 
 interface Todo {
   id: number;
@@ -8,13 +10,17 @@ interface Todo {
 }
 
 const initialTodos = [
-  { id: 1, text: '할 일 1', isCompleted: false },
-  { id: 2, text: '할 일 2', isCompleted: true },
-  { id: 3, text: '할 일 3', isCompleted: false },
+  { id: 1, text: 'Study React', isCompleted: false },
+  { id: 2, text: 'Study TypeScript', isCompleted: true },
+  { id: 3, text: 'Study Next.js', isCompleted: false },
 ];
 
 const TodoList = () => {
-  const [todos] = useState<Todo[]>(initialTodos);
+  const [todos, setTodos] = useState<Todo[]>(initialTodos);
+
+  const handleAdd = (text: string) => {
+    setTodos((prev) => [...prev, { id: Date.now(), text, isCompleted: false }]);
+  };
 
   return (
     <section>
@@ -27,6 +33,8 @@ const TodoList = () => {
           />
         ))}
       </ul>
+
+      <AddTodo onAdd={handleAdd} />
     </section>
   );
 };
