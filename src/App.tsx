@@ -1,7 +1,13 @@
+import Home from 'pages/Home';
+
 import './App.css';
 
 function App() {
-  return <div>Todo App</div>;
+  return (
+    <>
+      <Home />
+    </>
+  );
 }
 
 export default App;
