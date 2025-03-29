@@ -1,13 +1,8 @@
 import { useState } from 'react';
 
+import { Todo } from 'types/todos';
 import TodoItem from './TodoItem';
 import AddTodo from './AddTodo';
-
-interface Todo {
-  id: number;
-  text: string;
-  isCompleted: boolean;
-}
 
 const initialTodos = [
   { id: 1, text: 'Study React', isCompleted: false },
@@ -22,14 +17,25 @@ const TodoList = () => {
     setTodos((prev) => [...prev, { id: Date.now(), text, isCompleted: false }]);
   };
 
+  const handleDelete = (id: number) => {
+    setTodos((prev) => prev.filter((item) => item.id !== id));
+  };
+
+  const handleUpdate = (updatedTodo: Todo) => {
+    setTodos((prev) =>
+      prev.map((item) => (item.id === updatedTodo.id ? updatedTodo : item))
+    );
+  };
+
   return (
     <section>
       <ul>
         {todos.map((item) => (
           <TodoItem
             key={`todo-${item.id}`}
-            text={item.text}
-            isCompleted={item.isCompleted}
+            todo={item}
+            onDelete={handleDelete}
+            onUpdate={handleUpdate}
           />
         ))}
       </ul>
