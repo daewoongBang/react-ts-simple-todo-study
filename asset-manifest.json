@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-ts-simple-todo-study/static/css/main.ab675404.css",
+    "main.js": "/react-ts-simple-todo-study/static/js/main.753fcf9c.js",
+    "index.html": "/react-ts-simple-todo-study/index.html",
+    "main.ab675404.css.map": "/react-ts-simple-todo-study/static/css/main.ab675404.css.map",
+    "main.753fcf9c.js.map": "/react-ts-simple-todo-study/static/js/main.753fcf9c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ab675404.css",
+    "static/js/main.753fcf9c.js"
+  ]
+}
