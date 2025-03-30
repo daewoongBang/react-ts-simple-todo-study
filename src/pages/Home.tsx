@@ -43,7 +43,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <>
       <TodoHeader filter={filter} onFilterChange={setFilter} />
       <TodoList
         todos={filteredTodos}
@@ -51,7 +51,7 @@ const Home = () => {
         onUpdate={handleUpdate}
       />
       <AddTodo onAdd={handleAdd} />
-    </div>
+    </>
   );
 };
 
