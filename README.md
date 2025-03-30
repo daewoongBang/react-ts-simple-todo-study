@@ -1,6 +1,6 @@
 # react-ts-simple-todo-study
 
-👉 **[Demo](https://daewoongBang.github.io/react-ts-simple-todo-study)**
+👉 **[Demo Page](https://daewoongBang.github.io/react-ts-simple-todo-study)**
 
 ## 목적
 
@@ -23,7 +23,7 @@
 - [x] 다크모드 지원
 - [x] 로컬스토리지 저장
 
-## ⚠️ Version Notes
+## ⚠️ Issues
 
 - `react-icons`는 최신 버전(`^5.5.0`)에서 오류가 발생하여  
   **`5.3.0`으로 다운그레이드**하여 사용하였습니다.
