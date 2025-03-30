@@ -8,6 +8,7 @@
 
 - **React** (CRA 기반)
 - **TypeScript**
+- **PostCSS**
 - [**react-icons**](https://react-icons.github.io/react-icons/)
 
 ## 구현 기능
@@ -16,9 +17,9 @@
 - [x] 할 일 추가
 - [x] 할 일 삭제
 - [x] 할 일 완료 체크
-- [ ] 할 일 필터링
-- [ ] 다크모드 지원
-- [ ] 로컬스토리지 저장
+- [x] 할 일 필터링
+- [x] 다크모드 지원
+- [x] 로컬스토리지 저장
 
 ## ⚠️ Version Notes
 

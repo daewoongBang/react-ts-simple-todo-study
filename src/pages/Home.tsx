@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import TodoHeader from 'components/todos/TodoHeader';
 import TodoList from 'components/todos/TodoList';
@@ -6,15 +6,15 @@ import AddTodo from 'components/todos/AddTodo';
 
 import { Todo, Filter, FILTERS } from 'types/todos';
 import { DarkModeProvider } from 'context/DarkModeContext';
-
-const initialTodos = [
-  { id: 1, text: 'Study React', isCompleted: false },
-  { id: 2, text: 'Study TypeScript', isCompleted: true },
-  { id: 3, text: 'Study Next.js', isCompleted: false },
-];
+import {
+  loadJsonFromLocalStorage,
+  saveJsonToLocalStorage,
+} from 'utils/localStorage';
 
 const Home = () => {
-  const [todos, setTodos] = useState<Todo[]>(initialTodos);
+  const [todos, setTodos] = useState<Todo[]>(
+    () => loadJsonFromLocalStorage<Todo[]>('todos') || []
+  );
   const [filter, setFilter] = useState<Filter>(FILTERS[0]);
 
   const filteredTodos = useMemo(() => {
@@ -43,6 +43,10 @@ const Home = () => {
       prev.map((item) => (item.id === updatedTodo.id ? updatedTodo : item))
     );
   };
+
+  useEffect(() => {
+    saveJsonToLocalStorage('todos', todos);
+  }, [todos]);
 
   return (
     <DarkModeProvider>
