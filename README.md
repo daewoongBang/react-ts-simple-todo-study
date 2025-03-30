@@ -1,5 +1,7 @@
 # react-ts-simple-todo-study
 
+👉 **[Demo](https://daewoongBang.github.io/react-ts-simple-todo-study)**
+
 ## 목적
 
 - React + TypeScript 기반의 간단한 프로젝트 구조 연습
