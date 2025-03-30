@@ -44,7 +44,7 @@ const Home = () => {
 
   return (
     <>
-      <TodoHeader filter={filter} onFilterChange={setFilter} />
+      <TodoHeader currentFilter={filter} onFilterChange={setFilter} />
       <TodoList
         todos={filteredTodos}
         onDelete={handleDelete}
