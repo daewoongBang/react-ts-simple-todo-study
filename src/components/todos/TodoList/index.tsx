@@ -1,5 +1,7 @@
+import TodoItem from 'components/todos/TodoItem';
+
 import { Todo } from 'types/todos';
-import TodoItem from './TodoItem';
+import styles from './styles.module.css';
 
 interface TodoListProps {
   todos: Todo[];
@@ -9,8 +11,8 @@ interface TodoListProps {
 
 const TodoList = ({ todos, onDelete, onUpdate }: TodoListProps) => {
   return (
-    <section>
-      <ul>
+    <section className={styles.container}>
+      <ul className={styles.list}>
         {todos.map((item) => (
           <TodoItem
             key={`todo-${item.id}`}
