@@ -1,3 +1,5 @@
+import DarkMode from 'components/common/DarkMode';
+
 import { Filter, FILTERS } from 'types/todos';
 import styles from './styles.module.css';
 
@@ -9,6 +11,8 @@ interface TodoHeaderProps {
 const TodoHeader = ({ currentFilter, onFilterChange }: TodoHeaderProps) => {
   return (
     <header className={styles.header}>
+      <DarkMode />
+
       <ul className={styles.filters}>
         {FILTERS.map((filter, index) => (
           <li key={`filter-${filter}-${index}`}>

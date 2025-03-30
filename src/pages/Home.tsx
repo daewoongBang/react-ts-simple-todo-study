@@ -1,9 +1,11 @@
 import { useMemo, useState } from 'react';
 
-import { Todo, Filter, FILTERS } from 'types/todos';
 import TodoHeader from 'components/todos/TodoHeader';
 import TodoList from 'components/todos/TodoList';
 import AddTodo from 'components/todos/AddTodo';
+
+import { Todo, Filter, FILTERS } from 'types/todos';
+import { DarkModeProvider } from 'context/DarkModeContext';
 
 const initialTodos = [
   { id: 1, text: 'Study React', isCompleted: false },
@@ -43,7 +45,7 @@ const Home = () => {
   };
 
   return (
-    <>
+    <DarkModeProvider>
       <TodoHeader currentFilter={filter} onFilterChange={setFilter} />
       <TodoList
         todos={filteredTodos}
@@ -51,7 +53,7 @@ const Home = () => {
         onUpdate={handleUpdate}
       />
       <AddTodo onAdd={handleAdd} />
-    </>
+    </DarkModeProvider>
   );
 };
 
